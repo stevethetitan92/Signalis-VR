@@ -1,0 +1,12 @@
+*.dll
+*.exe
+*.pdb
+*.log
+*.dmp
+*.zip
+bin/
+obj/
+work/
+.vs/
+UserData/
+MelonLoader/
