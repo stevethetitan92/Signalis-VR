@@ -1,0 +1,7 @@
+{
+  "channel": "stable",
+  "repository": "stevethetitan92/Signalis-VR",
+  "enabled": false,
+  "latest": null,
+  "reason": "No approved stable release; updater not implemented."
+}
