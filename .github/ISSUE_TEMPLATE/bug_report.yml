@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible VR problem
+title: "[Bug] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Mod version
+      description: Include managed/native versions if known.
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup
+      description: Headset, connection app, runtime, GPU/driver, MelonLoader and camera mod versions.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Exact steps and result
+      description: Include key order, elapsed time, expected behavior, and whether a puzzle or scene change was involved.
+    validations:
+      required: true
+  - type: dropdown
+    id: desktop
+    attributes:
+      label: Desktop game state when headset failed
+      options:
+        - Still responsive
+        - Frozen or not responding
+        - Closed unexpectedly
+        - Normal diagnostic timeout
+        - Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots
+      description: Remove personal paths, account details, and sensitive data before attaching evidence.
