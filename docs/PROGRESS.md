@@ -31,3 +31,7 @@ This is a sanitized project history. Full local diagnostic logs are retained sep
 5. Address portability and startup usability, then retest.
 6. Reintroduce puzzles as a separate experiment.
 7. Publish a stable release only after documented acceptance testing; add opt-in stable updates afterward.
+
+## Portability candidate 0.4.4
+
+An isolated source snapshot and test notes are in [experiments/0.4.4](../experiments/0.4.4/README.md). This candidate removes the build machine's installation path, locates native libraries beside the running executable, and checks their packaged hashes. Relocated native-loading tests (spaces and Unicode), missing/damaged-file checks, and existing diagnostic/heading checks passed locally. The sandbox did not verify SteamVR connectivity. Actual MelonLoader/Mono startup and headset behavior remain untested. Main src remains the 0.4.2 baseline; no stable release or automatic update was published.
