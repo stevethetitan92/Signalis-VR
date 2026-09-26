@@ -1,3 +1,36 @@
+# Latest progress — September 25, 2026 (late session)
+
+This section supersedes the older status below, which is retained as history. These are local experimental builds, not published stable releases. This update documents results; it does not publish binaries, replace repository source, or enable automatic updates.
+
+## Working checkpoint and rollback rule
+
+**0.4.19 is the current working-book rollback baseline.** If a subsequent candidate fails or regresses, return to 0.4.19 before another attempt. Earlier 0.4.16 and 0.4.3 checkpoints remain preserved. This is limited test evidence, not a claim of complete game compatibility.
+
+## Progress since 0.4.12
+
+| Build | Change | Evidence and limits |
+|---|---|---|
+| 0.4.13 | Inventory screen capture | Inventory became visible; later Waiting was consistent with the retained diagnostic timeout. |
+| 0.4.14 | Initial pause candidate | Not installed; superseded by 0.4.16. |
+| 0.4.15 | Removed deliberate 15-minute session and 120-second menu cutoffs | User passed a three-minute inventory test and continued beyond fifteen minutes. Logs show about 25 minutes of submission through clean exit; exploration included doors/items/puzzles, so this was not exclusively a starting-room test. Indefinite stability not established. |
+| 0.4.16 | Explicit pause-menu detection and capture | User tested repeated Escape presses, settings navigation, mixed inventory/map/pause use and return to movement. A temporary downloaded save allowed successful item inspection. A 50-second headset recording supports item rotation/descriptions and repeated pause display/returns, with no visible Waiting in that clip. Item use/combining remains unverified. |
+| 0.4.17 | Book detection using manager screen | Failed: manual appeared on desktop only. Closing it still allowed walking. |
+| 0.4.18 | Book-reader diagnostics | Identified the active reader as FieldGuide, while the manager pointed to inactive Memories. FieldGuide open changes to false on closing even though its object remains active. |
+| 0.4.19 | Detect active, enabled, open book readers | User confirmed headset book display and ran through the starting manual five times, then confirmed stereo walking/look after closing. Logs corroborate capture activation and recovery. Other documents and dialogue are not covered by this pass. |
+| 0.4.20 | Dialogue visibility diagnostics based on 0.4.19 | Prepared locally, compiled and passed inherited recovery/flow checks. Not installed or headset-tested. No capture behavior change. An initial compile failure was corrected in diagnostic references; it never replaced the working installation. |
+
+## Current limitations and next test
+
+- Missing door messages, paper text and other interaction screens still need individual reproduction and diagnosis. The starting-book fix does not prove all text works.
+- Puzzle usability and camera disconnection at certain doors remain separate unresolved work.
+- Dashboard activation and bending/warping remain unresolved; bending is deferred.
+- Normal testing begins with **New Game every launch**, then F1 for first person. There is no regular saved game. The downloaded save was used only for the item test and will not be used going forward.
+- Existing setup: Steam SIGNALIS, MelonLoader, Camera Perspective Change, Quest 3S, Virtual Desktop and SteamVR. SSW was reported Disabled.
+- Next: test one missing door message with 0.4.20 diagnostics, compare desktop/headset and record open/close states before modifying capture. Preserve the working stereo, inventory, pause and book behavior.
+- Automated checks and compilation do not prove graphics stability. Stable releases and automatic updates remain pending acceptance testing.
+
+## Historical status (superseded where noted above)
+
 # Current progress — September 25, 2026
 
 These results supersede the older "Next sequence" below. Builds 0.4.10–0.4.12 are local experimental checkpoints, not published stable releases. This documentation update does not upload their binaries or source, enable automatic updates, or change the main source baseline.
