@@ -1,21 +1,22 @@
 # Signalis VR
 
-Experimental PC VR mod for the Steam version of SIGNALIS, developed with Quest 3S, Virtual Desktop, SteamVR, MelonLoader, and Camera Perspective Change.
+Experimental SIGNALIS VR mod. No public stable release.
 
-**No public stable release yet.** The best verified baseline is 0.4.2: five minutes of same-room stereo walking. Version 0.4.3 is preserved as an **untested puzzle checkpoint**, not a stability upgrade. Current priority is stereo reliability; puzzle work is paused.
+## Current checkpoint: 0.4.75 — September 26, 2026
 
-## Project guide
+The no-door/ladder-marker variant has user-verified starting-area stereo, object highlights, inventory, dialogue/puzzles, and Quest stick/button input. Menus, title-screen A, book navigation, sprint toggle, and stereo handoff have been tested by the user. Right stick retains smooth horizontal turning; vertical stick look is disabled.
 
-- [What works and what does not](docs/STATUS.md)
-- [Requirements and build limitations](docs/REQUIREMENTS.md)
-- [Version-by-version progress](docs/PROGRESS.md)
-- [Testing and function keys](docs/TESTING.md)
-- [Stable releases and update plan](docs/RELEASES.md)
+**[Pinned short-term roadmap](ROADMAP.md)** — resume with comfortable stick movement. Development paused for the day.
 
-## Report an issue
+**[Variant development log](SignalisVrNoMarkersDevelopmentLog.md)** distinguishes automated checks, user observations, evidence and unverified behavior. Weapon aim/fire/reload, later areas, the first airlock/EVA cutscene and sustained graphics stability are not qualified. Head tracking has unresolved tilt/wobble. Settings/pause/inventory still display keyboard prompts.
 
-Use this repository's **Issues → New issue → Bug report**. Include your build version, the exact key sequence, whether the desktop remains responsive, and a short reproduction. Remove personal paths and sensitive information from logs. Private repositories accept reports only from people granted access; public community reporting becomes available when the owner makes this repository public.
+## Source checkpoint
 
-Source here begins from 0.4.2. Experimental work belongs on development branches. Downloads in GitHub Releases will be reserved for builds that pass the documented release gate. Automatic updating is planned, **not implemented or enabled**.
+[September 26 source archive](SignalisVR-source-checkpoints-2026-09-26.zip) contains the variant's historical source snapshots through0.4.75, build/test scripts, third-party binding licenses, roadmap and log. Use SignalisVrQuestNative0475 as the current input checkpoint. Earlier candidates include known regressions: do not treat every snapshot as a recommended build. The older src tree and historical docs remain preserved; this roadmap and variant log are the current status reference.
 
-This project is unofficial. It does not include SIGNALIS, MelonLoader, the camera mod, or game assemblies. See [third-party notices](THIRD_PARTY_NOTICES.md).
+0.4.75 DLL SHA256: `2537A162E69B90C67BBEBC6AEFB9C0F9871897155857D04FDB5E6728586AEDD9`.
+The archive contains source, not game assemblies, raw game dumps or a packaged stable release. Build requires the local game/mod references described in its scripts. Do not auto-install or auto-launch the game. See [third-party notices](THIRD_PARTY_NOTICES.md).
+
+## Project history and issue reporting
+
+Existing [docs](docs) and [issue forms](.github/ISSUE_TEMPLATE) are retained. Historical validation claims apply only to their stated versions. Stable releases and automatic updates remain unavailable.
