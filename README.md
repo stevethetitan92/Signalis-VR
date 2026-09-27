@@ -28,5 +28,13 @@ The archives contain source, not game assemblies or game assets. Building requir
 
 ## Remaining issues
 
-Snow first person/stereo, normal-area recovery verification, cinematic bar verification, small rose-engine/logo presentation, recurring startup SteamVR dashboard, keyboard prompts, and head-tracking tilt/wobble remain open. Automated checks do not establish headset or graphics stability. No stable release or automatic updates; no automatic installation or game launch. License selection remains deferred.
+Snow first person/stereo, normal-area recovery verification, cinematic bar verification, small rose-engine/logo presentation, recurring startup SteamVR dashboard, keyboard prompts, and head-tracking tilt/wobble remain open. Automated checks do not establish headset or graphics stability. No stable release or automatic updates; no automatic installation or game launch. See the GPLv3 license below.
 
+
+## License and contributions
+
+Copyright (C) 2026 stevethetitan92 and contributors.
+
+The project-owned mod code, including project-owned code in the source checkpoint archives, is licensed under GNU General Public License version 3 (GPL-3.0-only). See [LICENSE](LICENSE). Third-party code retains its own notices and licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and bundled vendor notices. This does not license SIGNALIS itself, its assets, or proprietary game assemblies.
+
+The mod will remain free to download; Patreon support is optional and does not unlock exclusive mod features. Contributions, bug reports, documentation and headset testing are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting. This is experimental source, not a stable public binary release.

@@ -1307,3 +1307,8 @@ Missing markers are newly reported beyond prior starting-area coverage; specific
 objects not enumerated. Door/ladder suppression remains intentional.0484 headset
 result/install not confirmed. Preparing CURRENT_ISSUES, README, ROADMAP and variant
 log update on GitHub; no source/build changes, game launch or install.
+
+GitHub publication confirmed: main commit185213a2232feeca7551e3d6019c71a898469211. Updated CURRENT_ISSUES.md, README.md, ROADMAP.md and variant log. Evidence work/github-current-issues/published.png. No new build/install/launch; no visibility/license change.
+
+2026-09-27 - GPLv3 chosen by user
+Preparing GPLv3 license and contribution guide on GitHub. Scope: project-owned code, including archived checkpoints; third-party notices retained. README/ROADMAP clarify license and free mod policy. No code/build/hash changes; no install or launch. Repository visibility not yet changed.

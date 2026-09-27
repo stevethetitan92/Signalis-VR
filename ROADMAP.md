@@ -27,5 +27,6 @@ See [current issues](CURRENT_ISSUES.md) for the latest user report.
 
 Controller-operated mod menu; optional gun lasers with selectable colors; manual reload with button-reload option; hands-only body visibility; holsters. These remain plans, not completed features.
 
-No automatic game launch or installation. Provide build and Mods-folder links and one test step at a time. License choice remains deferred.
+No automatic game launch or installation. Provide build and Mods-folder links and one test step at a time. Project-owned mod code is licensed under GPLv3; see LICENSE and CONTRIBUTING.md.
+
 
