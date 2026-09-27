@@ -1022,3 +1022,207 @@ User stops development for day. Ordered priorities saved outputs/PINNED_ROADMAP.
 
 2026-09-26 -End-of-day GitHub synchronization blocked
 Found existing private repository https://github.com/stevethetitan92/Signalis-VR from readonly original repository config. Local Git cannot clone: missing remote-https helper. Authenticated browser can read repository; add-file controls and filechooser on upload/main fail despite reload and both supported chooser approaches. No GitHub commit/upload verified; do not claim synchronized. Prepared outputs/GitHubEndOfDay20260926 README, ROADMAP, separate variant log and source-only ZIP (27 snapshots, licenses; no game binaries/raw dumps). Chat already pinned, roadmap prominently saved locally. Work paused for day by user. Resume comfortable sticks after finishing pending GitHub sync; no gameplay work begun.
+
+2026-09-26 -GitHub retry succeeded
+User requested retry. Fresh authenticated browser upload worked. Verified GitHub main commit80f52835068fd76493b73763e616a4890c2c8907, Archive0.4.75 input checkpoint and pin short-term VR roadmap. Updated README, ROADMAP.md, separate variant development log, and source-only ZIP containing27 historical snapshots through0475. Older src/docs preserved as history with current status linked from README. No stable release or binary upload. Screenshot saved outputs/GitHubEndOfDay20260926/github-commit-confirmed.png. Prior sync-blocked entry is historical; this entry records resolution. Local post-sync receipt is not included in earlier uploaded log. Development remains paused for day; no game launched or installed.
+
+2026-09-26 -0476 offline stick comfort candidate
+User authorizes offline stick work after shelving licensing/public visibility.
+Created separate0476; production changes QuestInputPolicy circular movement dead
+zone with capped magnitude and independent legacy UI axes; softer cubic-blended
+smooth turn at small input, same90deg/sec full stick, vertical off; finite guards
+and circular neutral arming. SignalisVrTracking version only. No camera/graphics,
+native hooks, button or force compensation changes. Added test-stick-comfort;
+updated native routing fixture for UI axes. Build+11suites pass. Geometry sweep
+10863assertions+2neutral assertions. Test oracle integer-overload issue corrected.
+DLL FB97B8A78F4F88C876A4E06478EEA985230855B918D1067370D4244FD5FB32F7.
+ZIP EDE367971BB16D4F4C0D509F71E34A53F8ED9D0179300082B0017BA8DEADBF2A.
+Rollback0475 saved; installed0475 verified hash2537A162E69B90C67BBEBC6AEFB9C0F9871897155857D04FDB5E6728586AEDD9 unchanged. Restored missing local0475 DLL from that reference to preserve history.
+No assistant game launch/install. No headset test; comfort, actual movement speeds,
+UI regressions and graphics stability unverified. Different forward/strafe physics
+still need user assessment. Candidate ready for next session; not new baseline.
+See0476/INVESTIGATION.md for detailed checks, limits and one-step manual sequence.
+No GitHub update performed for this candidate. Licensing remains shelved.
+
+2026-09-27 -0476 user movement test: no perceived analog speed change
+User reports copied0476, title A/main-menu inputs work, F6/F9/F10 full stereo works. In headset, gentle versus full left-stick forward feels the same speed; gentle versus full sideways also feels the same. Record perceived fixed movement speed in both paths, not proof that sampled axes are fixed. Circular input geometry software tests do not establish physical movement speed.0476 has not met analog movement comfort goal. Need inspect downstream movement consumers/physics before claiming fix. Next isolated user test: gentle versus full right-stick horizontal turn rate. No code changes, launch or installation this turn.
+
+2026-09-27 -0477 cutscene candidate; priority changed by user
+User requests first airlock/EVA cutscene now due43percent weekly budget; stick tuning paused. Reports Waiting in headset. Code review finds OnSceneWasLoaded and invalid-camera guard Stop active stereo.0477 changes SignalisVrTracking only(version included): scene loads and invalid camera in active submitted stereo enter existing questMenuScene live game-screen capture, reset camera/recovery/input, retain native graphics resources. F12/error Stop preserved. Manual F6/F9/F10 required to resume immersive stereo in next gameplay area. Build+6focused suites pass, not graphics proof. Saved current log is not a cutscene reproduction. Blocking scene loads can still interrupt Unity frames; no guarantee of eliminating every Waiting interval. User runtime verification pending. DLL78BC6F41DE52BEA3F18101A3C05820C03502C40293199CD9B673275C4E7D9553. Installed0476 FB97B8A78F4F88C876A4E06478EEA985230855B918D1067370D4244FD5FB32F7 untouched; backup saved. No assistant game launch/install.0475 remains verified input baseline.
+
+2026-09-27 -Cutscene screenshots are0476, not0477 verification
+Installed DLL hash remains FB97B8A78F4F88C876A4E06478EEA985230855B918D1067370D4244FD5FB32F7 (0476). User screenshots140632/140642 show snowy cutscene behind central white rectangle with black bars, then Waiting. Log records DIAG stopped at14:06:34. Saved full log0477/evidence/0476-cutscene-waiting.log. Do not attribute this to0477 or call new fix tested. White rectangle origin unresolved. Next user closes game and copies0477 before repeating cutscene.
+
+2026-09-27 -0478 six-button keypad candidate
+User reports left stick fails in all four directions on six-button keypad.
+Offline native inspection finds EventScreen3DCam and ROT_Cursor use separate
+CharacterAction.lastActiveController and Move, beyond InputControl mode bridge.
+0478 adds scoped QuestPuzzleInput prefix/finalizer supplying left UI axes (stronger
+physical axes preserved) and controller branch, restoring fields even on original
+exception. No global CharacterAction.Update/shared getter patch. Two unique native
+addresses audited and guarded at runtime. Changed QuestFirstPerson installation,
+build.ps1, tracking version; new QuestPuzzleInput and harness test. Retains0477
+unverified cutscene change. Build+7 suites pass. Shared-getter initial missing
+audit fixture failure preserved; regenerated audit then pass. Checks do not prove
+native detour/headset/graphics behavior. See0478/INVESTIGATION.md and evidence.
+DLL6F6015BE869A5219FBA04BAA253B4881AD8A269A34221FF0C7D6F4F65A219120.
+Installed still0476 FB97B8A78F4F88C876A4E06478EEA985230855B918D1067370D4244FD5FB32F7;
+Rollback0476.zip saved. No automatic install or game launch. Manual keypad test
+pending; cutscene Waiting/white rectangle not yet verified fixed. No GitHub update.
+
+2026-09-27 -0479 inputs first; cutscene deferred by user
+User adds screenshots of terminal, keypad and airlock interaction views where
+stick fails, and says F1 does not put them in first person. Unknown whether F1
+also fails outside interaction views (user: i dont know). No camera fix claimed.
+Inspected readonly CameraPerspectiveSolid F1 handling; it moves Main Camera,
+not the separate interaction camera. Saved current0476 log includes foreground
+focus loss, but cause of user F1 observation is not proven.
+Created0479 using0476 rendering baseline plus0478 scoped puzzle fix.0478 retained
+as undelivered history;0477 cutscene changes excluded per new priority. Changed
+QuestPuzzleInput(new), QuestFirstPerson hook install, build source list, version.
+Build+7focused suites pass; native detour/headset/graphics remain unverified.
+DLL38E0F431770D41D39540C99FF243D74ADB37201A94178FE4BDDB7FE6064AC74D.
+Installed0476 unchanged; no launch/install. Backup retained; both copy links will
+be provided. Next test is directions in keypad, then each reported screen and
+A/B, ordinary movement and F1 outside interaction view. Do not claim all inputs
+complete before user checks. Weapon actions remain pending weapon availability.
+
+2026-09-27 -0479 user confirms interaction-area input
+After reporting copy complete and being asked to test keypad left-stick directions,
+user reports "input works in those areas" referring to the previously reported
+terminal/keypad/airlock interaction views. Record user-observed interaction input
+success; no separate A/B or every direction confirmation beyond that broad report.
+F1 outside interaction views remains unresolved/unverified. Next manual step:
+exit interaction view, focus game, press F1 once during ordinary room gameplay.
+No code change, assistant installation or launch. Cutscene work remains deferred.
+
+2026-09-27 -F1 reported ineffective after restart
+User reports pressing F1 does nothing. Latest log saved0479/evidence/0479-f1-report.log.
+No FPS Mode Enabled message found; last samples show desktop focus=False while
+SteamVR scene ownership remains correct, menuScene=True stage0. Focus was True
+earlier; timestamp of F1 press unknown. Original CameraPerspectiveSolid uses
+Unity Input.GetKeyDown(F1), unlike focus-independent diagnostic hotkeys. Cannot
+conclude focus caused reported press. Next controlled check: click game window
+then F1 during ordinary gameplay. No source change/install/launch this turn.
+
+2026-09-27 -F1 works with game window focused
+User confirms "that worked" after instruction to click inside desktop SIGNALIS
+window and press F1. Record user-observed first-person activation with desktop
+focus; no F1 code fix needed for this reproduction. Interaction-area input was
+previously user-confirmed on0479. Next check A activates a keypad button and B
+exits the puzzle. Complete input coverage and weapon actions remain unverified;
+cutscene work still deferred. No code change, installation or launch.
+
+2026-09-27 -0479 keypad A activation confirmed
+User answers yes to selecting a keypad button with left stick and pressing A to
+activate it. User-observed success; B exit is next separate check. No code change,
+installation or game launch. Complete input coverage remains unverified.
+
+2026-09-27 -0479 keypad B exit confirmed
+User answers yes: B closes keypad and returns to room. Keypad stick navigation,
+A activation and B exit now user-observed working. Next check ordinary movement
+and smooth horizontal turning after exiting puzzle. No code change/install/launch.
+Cutscene remains deferred; full input coverage and weapon actions not established.
+
+2026-09-27 -0479 movement after puzzle confirmed
+User answers yes to left-stick movement in all four directions and right-stick
+left/right turning after exiting keypad. User-observed transition back to ordinary
+controls works. Next regression check X inventory and B close. No source change,
+installation or launch; cutscene deferred and weapon actions remain unverified.
+
+2026-09-27 -0479 inventory open/close confirmed
+User confirms X opens inventory and B closes it. User-observed regression check
+passes after keypad and movement tests. Next check Y pause menu and B back.
+No code change, install or launch. Weapon actions and full coverage unverified.
+
+2026-09-27 -0479 pause menu confirmed
+User confirms Y opens pause menu and B returns to game. User-observed regression
+check passes. Next check left-grip sprint toggle on/off while moving forward.
+No code change, installation or launch. Weapon actions remain untested.
+
+2026-09-27 -0479 sprint toggle confirmed
+User confirms left-grip tap toggles sprint on and off while moving forward.
+Current user-confirmed0479 checks: interaction-area input, keypad navigation/A/B,
+movement and horizontal turning after puzzle, X/B inventory, Y/B pause, sprint.
+F1 works with game window focused. Next targeted check terminal selection and
+activation (distinct from keypad). Weapon actions remain untested; cutscene work
+still deferred. No source change, installation or launch.
+
+2026-09-27 -0479 available-input checkpoint accepted by user
+User reports "all inputs work" after terminal selection/activation test prompt.
+Accept0479 as user-verified available-input checkpoint, following explicit keypad
+navigation/A/B, post-puzzle movement/turning, inventory, pause and sprint checks.
+F1 works when desktop game window is focused. Broad report does not establish
+weapon aim/fire/reload without weapon; those remain pending. Input prerequisite
+for returning to deferred cutscene investigation is satisfied for tested area.
+No new build, installation or launch. Preserve0479 as fallback for cutscene work.
+
+2026-09-27 -0480 cutscene work resumed on verified0479 inputs
+User agrees to resume cutscene investigation. Built0480 from0479 input sources
+with0477 scene-load/invalid-camera live-screen handoff in SignalisVrTracking only
+(version included). Baseline tracking equality0479-to0476 verified except version.
+All input source preserved. Build+8focused suites pass; headset, cutscene rectangle,
+Waiting intervals and next-area behavior unverified. Blocking Unity load can still
+interrupt frames. No immersive cutscene claim. See0480/INVESTIGATION.md.
+DLL AE82EDFF4A61B7EF0928E3A482D162885E129CEB5EEED412EB4BA12174CAA144.
+Installed0479 hash38E0F431770D41D39540C99FF243D74ADB37201A94178FE4BDDB7FE6064AC74D
+verified unchanged; restored missing workspace0479 DLL from that reference and
+saved Rollback0479.zip. No assistant installation or launch. Next manual copy/test.
+
+2026-09-27 -0480 cutscene traversal succeeds; remaining visual/return issues
+User reports cutscene reaches next area, controls fine, but first person/stereo
+lost in snow and next area; asks adjust/remove bars and enlarge rose-engine card.
+Requests thorough video review. Reviewed full239.68s timeline with2401fps samples,
+108additional4fps title-region samples, and full-resolution222s frame. Correct
+count wording: 240 frames sampled at1fps. No continuous/audio playback claim.
+Findings and timestamps saved work/cutscene0480/REVIEW.md with sheets and log.
+Flat panel persists throughout; scene log confirms0480 persistent screen handoff
+PEN_Hole then LOV_Reeducation. Automatic stereo restoration not implemented in0480.
+Full-width short framing varies during cinematics; face close-up also has separate
+short CENTRAL black notches top/bottom. No Waiting panel in reviewed samples, not
+proof zero transient Waiting. Rose-engine logo not positively isolated; remains
+user report. Original F1 handler excludes PEN_Hole, requiring special handling.
+No new build/code/install/launch.0480 preserves progression and working input;
+first-person restoration, stereo recovery and cinematic layout still outstanding.
+
+2026-09-27 -0481 consolidated findings and first recovery build
+User requests consolidate findings and start build. Saved0481/CONSOLIDATED_FINDINGS.md
+with visual vs code vs user evidence, limitations and test sequence.0481 adds guarded
+standard-area first-person/stereo recovery through original perspective mod's managed
+F1 path, retained textures and pose drain; only after normal play stable0.75s. Stop
+clears intent. Snow PEN_Hole remains excluded with camera diagnostics; no snow fix
+claimed. Temporarily hides only named Effects Camera/Bars/TopBar/BottomBar renderers
+during flat capture, restoring afterward/stop/scene change. Logo scaling and baked
+movie bars unresolved. EnhancedResolution scaling of bars is code evidence, not
+runtime causal proof. UnityPy asset inspection unavailable; no assets modified.
+Changed SceneRecovery(new), tracking lifecycle/version, QuestFirstPerson install,
+QuestMenuScene finally, build source list; added scene gate harness. Input policy,
+controllers/native reads/puzzle mapping/rendering/book/dialogue hash-equal0480.
+Build+9suites pass; no native/headset/graphics validation. DLL
+C8CBAF3554892DA4551635D20D80FCA287D5C6C2D53BA23F83592C0D3019E0E9.
+Installed0480 remains AE82EDFF4A61B7EF0928E3A482D162885E129CEB5EEED412EB4BA12174CAA144;
+restored missing workspace0480 from verified installed copy, backup zip preserved.
+No assistant launch/install or GitHub update. Partial candidate: standard-area
+recovery and bar artwork; snow/rose-engine remain subsequent work.
+
+2026-09-27 -Recurring startup SteamVR dashboard reported
+User reports dashboard appears whenever starting game, supplies143059 screenshot
+showing SIGNALIS Resume Game/VR Controller Bindings/VR Video Settings/Exit Game.
+Screenshot predates0481; do not attribute appearance to new recovery build.
+Record recurring startup issue distinct from cutscene Waiting or game pause menu.
+Cause not established from screenshot. Next immediate step Resume Game to dismiss
+and continue0481 test. No code change, automatic install, dashboard action or launch.
+
+2026-09-27 -0481 video reviewed;0482 narrow cinematic bar matcher correction
+Reviewed152644-0 recording with 3s whole-clip and1s first50s extracted frames.
+Short central bars persist12-35s, central edge notches36-46s; snow remains flat;
+clip reaches red shaft but not next standard area. Runtime PEN_Hole only, no
+recovery messages; normal-area recovery therefore unverified. Logo not identified.
+Found exact camera-name mismatch: runtime Diag/Effects Camera versus0481 Effects
+Camera-only matcher.0482 accepts both exact names and logs matched renderers once.
+Changed SceneRecovery.cs and tracking version only; other production code unchanged.
+Build, scene-recovery harness, menu-scene harness pass; graphics/headset unverified.
+0482 SHA256 51C815A2197DCC9EDBB5E4C78586B83DE028749C686C05BD3487CE8F20D352A5.
+Installed0481 hash verified C8CBAF3554892DA4551635D20D80FCA287D5C6C2D53BA23F83592C0D3019E0E9;
+restored missing local0481 DLL from verified installed copy. No install/launch.
+Evidence work/cutscene0481; report0482/REVIEW.md. Snow stereo/logo remain unresolved.

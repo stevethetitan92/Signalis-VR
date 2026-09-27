@@ -1,22 +1,27 @@
 # Signalis VR
 
-Experimental SIGNALIS VR mod. No public stable release.
+Experimental SIGNALIS VR mod. No stable release.
 
-## Current checkpoint: 0.4.75 — September 26, 2026
+## Current work: 0.4.82 — September 27, 2026
 
-The no-door/ladder-marker variant has user-verified starting-area stereo, object highlights, inventory, dialogue/puzzles, and Quest stick/button input. Menus, title-screen A, book navigation, sprint toggle, and stereo handoff have been tested by the user. Right stick retains smooth horizontal turning; vertical stick look is disabled.
+The no-door/ladder-marker variant preserves object highlights and interactions. The user verified available Quest inputs, including the previously failing keypad/terminal areas, on the 0.4.79 input baseline. F1 first person was subsequently confirmed working. Right-stick turning remains smooth and horizontal only. Weapon aim/fire/reload still require testing with a weapon.
 
-**[Pinned short-term roadmap](ROADMAP.md)** — resume with comfortable stick movement. Development paused for the day.
+Cutscene continuity in 0.4.80 allowed the user to progress through the airlock/EVA sequence and reach the next area with controls working. First person and stereo were lost during snow traversal and afterward; cinematic bars and small presentation elements remained.
 
-**[Variant development log](SignalisVrNoMarkersDevelopmentLog.md)** distinguishes automated checks, user observations, evidence and unverified behavior. Weapon aim/fire/reload, later areas, the first airlock/EVA cutscene and sustained graphics stability are not qualified. Head tracking has unresolved tilt/wobble. Settings/pause/inventory still display keyboard prompts.
+0.4.81 adds guarded recovery in normal gameplay areas and temporary cinematic-bar hiding. The latest recording still shows short central black bars and flat snow traversal. Its clip ends before the next normal area, so automatic recovery there remains unverified. 0.4.82 corrects an exact camera-name mismatch in the bar matcher and logs matches. It compiles and passes recovery/capture harness checks; headset verification is pending. The user reports copying 0.4.82.
 
-## Source checkpoint
+- [Current roadmap](ROADMAP.md)
+- [Detailed 0.4.82 findings and checks](STATUS-0482.md)
+- [Separate variant development log](SignalisVrNoMarkersDevelopmentLog.md)
 
-[September 26 source archive](SignalisVR-source-checkpoints-2026-09-26.zip) contains the variant's historical source snapshots through0.4.75, build/test scripts, third-party binding licenses, roadmap and log. Use SignalisVrQuestNative0475 as the current input checkpoint. Earlier candidates include known regressions: do not treat every snapshot as a recommended build. The older src tree and historical docs remain preserved; this roadmap and variant log are the current status reference.
+## Source checkpoints
 
-0.4.75 DLL SHA256: `2537A162E69B90C67BBEBC6AEFB9C0F9871897155857D04FDB5E6728586AEDD9`.
-The archive contains source, not game assemblies, raw game dumps or a packaged stable release. Build requires the local game/mod references described in its scripts. Do not auto-install or auto-launch the game. See [third-party notices](THIRD_PARTY_NOTICES.md).
+[September 27 archive](SignalisVR-source-checkpoints-2026-09-27.zip) preserves source snapshots 0.4.76–0.4.82, build/test scripts, review notes and binding licenses. Start with SignalisVrSceneRecovery0482 for the current experimental candidate; SignalisVrPuzzleInput0479 is the verified input baseline. Earlier candidates can contain known regressions. [September 26 archive](SignalisVR-source-checkpoints-2026-09-26.zip) remains available through 0.4.75.
 
-## Project history and issue reporting
+The archives contain source, not game assemblies or game assets. Building requires local references described in the scripts. The older src tree is historical, not the latest candidate. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
-Existing [docs](docs) and [issue forms](.github/ISSUE_TEMPLATE) are retained. Historical validation claims apply only to their stated versions. Stable releases and automatic updates remain unavailable.
+0.4.82 DLL SHA256: `51C815A2197DCC9EDBB5E4C78586B83DE028749C686C05BD3487CE8F20D352A5`.
+
+## Remaining issues
+
+Snow first person/stereo, normal-area recovery verification, cinematic bar verification, small rose-engine/logo presentation, recurring startup SteamVR dashboard, keyboard prompts, and head-tracking tilt/wobble remain open. Automated checks do not establish headset or graphics stability. No stable release or automatic updates; no automatic installation or game launch. License selection remains deferred.
