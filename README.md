@@ -2,7 +2,11 @@
 
 Experimental SIGNALIS VR mod. No stable release.
 
-## Current work: 0.4.82 — September 27, 2026
+## Latest status — September 27, 2026
+
+**[Current issues](CURRENT_ISSUES.md):** black bars remain in the first cutscenes; stereo is lost entering snow; function buttons fail at the red bottom of the stairs but work again in the bathroom, allowing first person/stereo to be re-enabled; many interactable object markers are missing. These are user-reported issues, not resolved features. 0.4.84 is a local bar-fix candidate awaiting headset verification. Source archives below currently extend through 0.4.82.
+
+## Historical checkpoint: 0.4.82 — September 27, 2026
 
 The no-door/ladder-marker variant preserves object highlights and interactions. The user verified available Quest inputs, including the previously failing keypad/terminal areas, on the 0.4.79 input baseline. F1 first person was subsequently confirmed working. Right-stick turning remains smooth and horizontal only. Weapon aim/fire/reload still require testing with a weapon.
 
@@ -25,3 +29,4 @@ The archives contain source, not game assemblies or game assets. Building requir
 ## Remaining issues
 
 Snow first person/stereo, normal-area recovery verification, cinematic bar verification, small rose-engine/logo presentation, recurring startup SteamVR dashboard, keyboard prompts, and head-tracking tilt/wobble remain open. Automated checks do not establish headset or graphics stability. No stable release or automatic updates; no automatic installation or game launch. License selection remains deferred.
+

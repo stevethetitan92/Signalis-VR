@@ -4,13 +4,15 @@ Updated September 27, 2026. The user reprioritized input completeness, then the 
 
 ## Immediate work
 
-1. Preserve the user-verified 0.4.79 input baseline, including keypad and terminal navigation. Weapon controls remain untested without a weapon.
-2. Verify 0.4.82 cinematic-bar correction in the headset. User reports copying the candidate; no headset result yet.
-3. Verify automatic first-person/stereo recovery after reaching the next normal gameplay area. The latest clip reaches the red shaft, not that area.
-4. Implement snow first person/stereo and resolve small logo/presentation issues. Investigate recurring startup SteamVR dashboard.
+See [current issues](CURRENT_ISSUES.md) for the latest user report.
 
-0.4.80 progressed through the cutscene and next area with controls intact, but lost immersive rendering. 0.4.81 added guarded standard-area recovery; its snow exclusion remains intentional and unresolved. 0.4.82 fixes a bar-renderer camera-name mismatch. Compilation and harness checks pass; runtime graphics behavior remains unverified. See [findings](STATUS-0482.md) and the [variant log](SignalisVrNoMarkersDevelopmentLog.md).
+1. Finish fixing black bars in the first cutscenes; 0.4.84 is awaiting headset verification.
+2. Restore first person/stereo through snow entry and the red bottom of the stairs; investigate function buttons failing there.
+3. Preserve the bathroom recovery point, where the user reports function buttons work and first person/stereo can be re-enabled. Automatic recovery is not verified.
+4. Identify and restore missing markers on interactable objects beyond the previously tested starting area. Keep doors and ladders intentionally unmarked.
+5. Preserve working controller input; weapon controls still await a weapon test.
 
+0.4.82 did not remove the bars. 0.4.83 partially improved later masks, while early floating bars remained. 0.4.84 extends the existing fix to the earlier capture path; automated checks pass but no headset result is available. Snow and shaft rendering remain unresolved. The [variant log](SignalisVrNoMarkersDevelopmentLog.md) separates user observations, video/log evidence and automated checks.
 ## Retained longer-term order
 
 1. Comfortable stick movement.
@@ -26,3 +28,4 @@ Updated September 27, 2026. The user reprioritized input completeness, then the 
 Controller-operated mod menu; optional gun lasers with selectable colors; manual reload with button-reload option; hands-only body visibility; holsters. These remain plans, not completed features.
 
 No automatic game launch or installation. Provide build and Mods-folder links and one test step at a time. License choice remains deferred.
+

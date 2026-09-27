@@ -1226,3 +1226,84 @@ Build, scene-recovery harness, menu-scene harness pass; graphics/headset unverif
 Installed0481 hash verified C8CBAF3554892DA4551635D20D80FCA287D5C6C2D53BA23F83592C0D3019E0E9;
 restored missing local0481 DLL from verified installed copy. No install/launch.
 Evidence work/cutscene0481; report0482/REVIEW.md. Snow stereo/logo remain unresolved.
+
+2026-09-27 -GitHub updated on user request
+Published main commit3b20e12fe6fb8de379560e687479643d26944ca1 via authenticated
+GitHub browser upload; repository page confirms commit. Updated README, ROADMAP,
+separate variant log, STATUS-0482, and source archive covering0476-0482. Archives
+contain source/scripts/licenses, no game assemblies/assets or raw runtime dumps.
+User reported copying0482; headset verification remains pending. Prior checkpoints
+preserved; license/visibility unchanged. No game launch/install. Local upload staging
+and confirmation screenshot: work/github-0482. No new build;0482 hash unchanged.
+
+2026-09-27 -0482 headset recording: cinematic bar correction FAILED
+User provided VirtualDesktop.Android-20260927-172201-0.mp4 after guided test.
+Installed DLL verified0482 SHA25651C815A2197DCC9EDBB5E4C78586B83DE028749C686C05BD3487CE8F20D352A5.
+Reviewed one-second extracted frames across114.89s recording (not continuous/audio).
+27-47s: short floating horizontal bars persist.48-49s: small central white panel.
+50-64s: central top/bottom notches persist (vary during face closeup).65s onward
+snow traversal displayed flat; clip reaches red shaft, not next normal area.
+No CINEMATIC BAR match messages in copied runtime log. Exact-name correction alone
+insufficient; next investigation must identify actual bar component/hierarchy rather
+than assume Renderer match. SNOW CAMERA messages show recovery intent active;
+normal-area auto recovery still untested by this clip. No Waiting seen in sampled
+frames; not proof of zero transient events. No new code/build/install/launch.
+Evidence: work/cutscene0482/runtime.log, video-info.txt, timeline01-05.
+
+2026-09-27 -0483 targets actual BlackBars UI references
+Offline Assembly-CSharp metadata: BlackBars.barTop/barBottom are RectTransform.
+Renderer-only scan misses UI Graphic components.0483 adds loaded-scene BlackBars
+reference discovery, per-graphic match logging, temporary enabled-Graphic hiding
+and restoration via existing capture finally/stop/scene-change mechanism. No native
+hooks/container disable/game assets altered. Actual graphic matches not yet observed.
+Changed SceneRecovery.cs and tracking version only; all other production C# hash-equal0482.
+Build +scene-recovery +menu-scene harnesses PASS; no graphics/headset validation.
+DLL SHA2565331FADCA51FE28CBDBA2832557D21434A9A000323150B3DF5FB1EBE32120EF3.
+Candidate outputs/SignalisVrCinematicBars0483; evidence scripts/logs stored there.
+0482 baseline retained/restored if missing from verified installed copy. No install
+or launch. Snow/logo unresolved; normal-area recovery unverified; GitHub unchanged.
+
+2026-09-27 -Red shaft first-person failure clarified
+User172832 screenshot shows red shaft in third person; reports first person does
+not work. Latest runtime scene remains PEN_Hole (loaded17:22:51.813), no later scene
+load. Original perspective mod OnUpdate explicitly excludes PEN_Hole; current
+recovery does too. Thus unresolved snow-scene coverage includes red shaft, not
+just outdoor walking.0483 changes bars only and does not address this limitation.
+No new build/install/launch. Do not ask repeated F1 tests here; unsupported scene
+needs separate camera work. Normal-area recovery test occurs later.
+
+2026-09-27 -0483 headset recording: partial bar improvement
+User supplied173308-0.mp4 duration105.43s. Reviewed one-second extracted frames
+throughout (not continuous playback/audio). Installed0483 verified SHA256
+5331FADCA51FE28CBDBA2832557D21434A9A000323150B3DF5FB1EBE32120EF3.
+14-34s short floating central bars persist;35-37s central white panel remains.
+38s onward snow arrival lacks prior central edge notches; face closeup still has
+full-width cinematic framing. Snow/redshaft remain flat as known. No next normal
+area shown. Runtime at17:33:46.399 loadsPEN_Hole; six CINEMATIC BAR UI matches
+at17:33:46.577-.579 confirm discovery of three top/bottom pairs. Thus0483 improves
+post-scene-load masks but does not fix earlier ship shot. Need inspect pre-handoff
+capture path/questMenuScene guard and earlier bars; do not declare whole fix done.
+Evidence work/cutscene0483 runtime.log, video-info.txt, timeline01-05. No code/build,
+install or launch by assistant; no general stability claim or GitHub update.
+
+2026-09-27 -0484 extends bar handling to early cinematic capture
+0483 runtime shows camera-suspended capture before PEN_Hole; prior bar gate
+required questMenuScene.0484 permits paused-camera or native cutscene states too,
+while immersive requested/active/stereo; outer PuzzleFrames finally restores on
+success, skip and error. Changed SceneRecovery.cs, PuzzleScreen.cs and tracking
+version. Build +menu-scene +scene-recovery harness PASS; no headset verification.
+SHA256 C186DD0DAEB848691A0D3F8F5E7FB111E7E7A39D0921D842B3AB406169A54FF3.
+No install/launch;0483 remains installed reference. User reiterates stereo lost
+on snow entry; confirmed unresolved with redshaft.0484 is bar-only; next camera
+work must handle PEN_Hole rather than claim standard-area recovery covers snow.
+Small white panel/logo unresolved. GitHub unchanged.
+
+2026-09-27 -User current-issues report for GitHub
+User requests recording: black bars in first cutscenes; stereo lost entering snow;
+function buttons fail at red bottom of stairs; function buttons work in bathroom
+and allow proceeding in first person/stereo; many interactable objects lack markers.
+Bathroom is user-reported manual recovery, NOT proof automatic recovery works.
+Missing markers are newly reported beyond prior starting-area coverage; specific
+objects not enumerated. Door/ladder suppression remains intentional.0484 headset
+result/install not confirmed. Preparing CURRENT_ISSUES, README, ROADMAP and variant
+log update on GitHub; no source/build changes, game launch or install.
