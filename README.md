@@ -6,6 +6,10 @@ The tester reports that the complete **fresh install worked**. Earlier user obse
 
 See [current status and installation requirements](STATUS-2026-10-09.md), [remaining issues](CURRENT_ISSUES.md), and [roadmap](ROADMAP.md).
 
+## Download and install
+
+[Download the full 0.7.161 fresh-install prerelease](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.161-test.1). Choose **SignalisVR-0.7.161-FreshInstall-BepInEx.zip** under Assets; the automatic Source code downloads are not install packages. Close SIGNALIS, preserve a working backup, and extract the ZIP contents beside SIGNALIS.exe. Read the release notes and included INSTALL-FIRST.txt.
+
 ## Required setup
 
 Use a legitimate Windows 64-bit SIGNALIS installation, SteamVR, and your headset connection software. The tested package uses **MelonLoader 0.5.7 x64** and requires all three mods:
