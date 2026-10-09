@@ -1,40 +1,33 @@
 # Signalis VR
 
-Experimental SIGNALIS VR mod. No stable release.
+Experimental Windows PC VR mod for SIGNALIS. Latest documented candidate: **0.7.161**, October 9, 2026. No stable release yet.
 
-## Latest status — September 27, 2026
+The tester reports that the complete **fresh install worked**. Earlier user observations confirmed HE flaregun switching, hands/grips/models, the Nowhere minimap, and computer functionality. These reports do not establish universal graphics stability or smooth movement.
 
-**[Current issues](CURRENT_ISSUES.md):** black bars remain in the first cutscenes; stereo is lost entering snow; function buttons fail at the red bottom of the stairs but work again in the bathroom, allowing first person/stereo to be re-enabled; many interactable object markers are missing. These are user-reported issues, not resolved features. 0.4.84 is a local bar-fix candidate awaiting headset verification. Source archives below currently extend through 0.4.82.
+See [current status and installation requirements](STATUS-2026-10-09.md), [remaining issues](CURRENT_ISSUES.md), and [roadmap](ROADMAP.md).
 
-## Historical checkpoint: 0.4.82 — September 27, 2026
+## Required setup
 
-The no-door/ladder-marker variant preserves object highlights and interactions. The user verified available Quest inputs, including the previously failing keypad/terminal areas, on the 0.4.79 input baseline. F1 first person was subsequently confirmed working. Right-stick turning remains smooth and horizontal only. Weapon aim/fire/reload still require testing with a weapon.
+Use a legitimate Windows 64-bit SIGNALIS installation, SteamVR, and your headset connection software. The tested package uses **MelonLoader 0.5.7 x64** and requires all three mods:
 
-Cutscene continuity in 0.4.80 allowed the user to progress through the airlock/EVA sequence and reach the next area with controls working. First person and stereo were lost during snow traversal and afterward; cinematic bars and small presentation elements remained.
+- `Mods/SignalisVrTracking.dll` (0.7.161)
+- `Mods/FPv2_reworked.dll`
+- `Mods/CameraPerspectiveSolid.dll`
 
-0.4.81 adds guarded recovery in normal gameplay areas and temporary cinematic-bar hiding. The latest recording still shows short central black bars and flat snow traversal. Its clip ends before the next normal area, so automatic recovery there remains unverified. 0.4.82 corrects an exact camera-name mismatch in the bar matcher and logs matches. It compiles and passes recovery/capture harness checks; headset verification is pending. The user reports copying 0.4.82.
+Also required: the matching `openvr_api.dll` and `SignalisVrRenderBridge.dll` in `UserLibs/SignalisVrTracking/`. The tested fresh-install package includes the requested BepInEx folder; its separate plugin activation is not established by the startup report. Preserve a working fallback and close the game before manually replacing files. No automatic installation or stable updates.
 
-- [Current roadmap](ROADMAP.md)
-- [Detailed 0.4.82 findings and checks](STATUS-0482.md)
-- [Separate variant development log](SignalisVrNoMarkersDevelopmentLog.md)
+## Current source for review
 
-## Source checkpoints
+[SignalisVR-code-review-0.7.161.zip](SignalisVR-code-review-0.7.161.zip) contains current mod logic and native bridge source. It excludes embedded model/texture/audio/artwork payloads, game binaries, proprietary assemblies, personal settings, saves and raw runtime logs. **It is a code-review snapshot, not a complete build or install package.** Its omitted-file list and original source manifest describe the missing parts.
 
-[September 27 archive](SignalisVR-source-checkpoints-2026-09-27.zip) preserves source snapshots 0.4.76–0.4.82, build/test scripts, review notes and binding licenses. Start with SignalisVrSceneRecovery0482 for the current experimental candidate; SignalisVrPuzzleInput0479 is the verified input baseline. Earlier candidates can contain known regressions. [September 26 archive](SignalisVR-source-checkpoints-2026-09-26.zip) remains available through 0.4.75.
+Historical source archives, status files and the root `src` tree remain available. The root `src` tree is historical; use the versioned review snapshot for current logic. Do not assume older checkpoints have current behavior.
 
-The archives contain source, not game assemblies or game assets. Building requires local references described in the scripts. The older src tree is historical, not the latest candidate. See [third-party notices](THIRD_PARTY_NOTICES.md).
+## Variant behavior and validation
 
-0.4.82 DLL SHA256: `51C815A2197DCC9EDBB5E4C78586B83DE028749C686C05BD3487CE8F20D352A5`.
+Passage door/ladder artwork and labels are hidden on desktop and in VR; actual interactions and approved object markers remain. Preserve books, dialogue, puzzles, inventory, controls and native rendering behavior.
 
-## Remaining issues
-
-Snow first person/stereo, normal-area recovery verification, cinematic bar verification, small rose-engine/logo presentation, recurring startup SteamVR dashboard, keyboard prompts, and head-tracking tilt/wobble remain open. Automated checks do not establish headset or graphics stability. No stable release or automatic updates; no automatic installation or game launch. See the GPLv3 license below.
-
+0.7.161 passed 110 automated regression checks and two matching deterministic builds. Automated checks do not establish headset appearance, reflections or performance. Computer disk-drive view/crosshair changes, movement stutter, enemy graphics and other open issues need real game/headset checks.
 
 ## License and contributions
 
-Copyright (C) 2026 stevethetitan92 and contributors.
-
-The project-owned mod code, including project-owned code in the source checkpoint archives, is licensed under GNU General Public License version 3 (GPL-3.0-only). See [LICENSE](LICENSE). Third-party code retains its own notices and licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and bundled vendor notices. This does not license SIGNALIS itself, its assets, or proprietary game assemblies.
-
-The mod will remain free to download; Patreon support is optional and does not unlock exclusive mod features. Contributions, bug reports, documentation and headset testing are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting. This is experimental source, not a stable public binary release.
+Project-owned code is GPL-3.0-only; see [LICENSE](LICENSE). Third-party code retains its own notices. This does not license SIGNALIS, game assets or proprietary assemblies. See [third-party notices](THIRD_PARTY_NOTICES.md) and [contributing](CONTRIBUTING.md). The mod remains free; optional support does not unlock exclusive features.

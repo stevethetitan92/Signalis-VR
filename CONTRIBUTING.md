@@ -1,27 +1,19 @@
 # Contributing to Signalis VR
 
-Help with fixes, documentation, reproducible bug reports and headset testing is welcome. Start with CURRENT_ISSUES.md and ROADMAP.md. Open an issue before a substantial change so work can be coordinated; small fixes can go directly into a pull request.
+Fixes, documentation, reproducible bug reports and headset testing are welcome. Start with CURRENT_ISSUES.md and ROADMAP.md. Coordinate substantial changes in an issue; focused fixes can go directly into a pull request.
 
-## Source and building
+## Current source
 
-The root src directory is historical. The September 27 source archive contains checkpoints 0.4.76 through 0.4.82. Extract a checkpoint into your own working folder; 0.4.79 is the user-verified input baseline and 0.4.82 is a later experimental candidate. Local 0.4.84 work is described in the development log but is not in those archives yet. Do not assume the most recent candidate is stable.
+Use `SignalisVR-code-review-0.7.161.zip` for current logic. It deliberately excludes embedded model/texture/audio/artwork payloads, generated asset catalogue/font data and proprietary references, and **cannot build standalone**. The original source manifest and omitted-file list document this scope. The root `src` tree and September source checkpoint archives are historical.
 
-Building requires Windows, a legitimate local SIGNALIS installation with the expected MelonLoader references, and PowerShell with Microsoft.CodeAnalysis.dll and Microsoft.CodeAnalysis.CSharp.dll in PSHOME. Inspect the chosen build.ps1 for its exact references. Run it from PowerShell with your own game path:
+Build work requires a legitimate local game installation and matching loader/game references. Do not redistribute those references. Preserve a working fallback and inspect build scripts before use. No automatic installation is provided.
 
-```powershell
-./build.ps1 -GamePath 'D:/SteamLibrary/steamapps/common/SIGNALIS'
-```
+## Changes and testing
 
-The build creates SignalisVrTracking.dll in that checkpoint folder. It does not install it. Keep a backup of your working mod and close the game before manually replacing files. Native bridge source and its tooling are in the historical src tree; this is not yet a one-command complete mod package. Please report missing prerequisites rather than redistributing game assemblies.
+Submit reviewable source or patches, explain the concrete problem and resulting behavior, and identify the starting version. Preserve working controls, puzzles, inventory, books, dialogue and native rendering. Passage door/ladder artwork is intentionally hidden in this variant; actual interactions and approved other markers must remain.
 
-## Pull requests and testing
-
-Fork the repository, create a branch, make one focused change and open a pull request. Identify the checkpoint you started from and include source changes as reviewable files or a patch, not only a compiled DLL. Explain the problem, resulting behavior, checks performed and known limitations. Preserve earlier checkpoints.
-
-Run the relevant test-*.ps1 scripts supplied with your checkpoint. Separate compilation and simulated checks from actual in-game/headset testing. State headset, VR runtime, mod version, reproduction steps and whether first person/stereo were active. Do not mark graphics stability as verified based only on compilation. Remove private details from logs before attaching them.
-
-Priorities include early cutscene bars, stereo loss in snow, function-key failures at the red stair bottom, and missing interactable-object markers. Preserve working controls, puzzles, inventory, books and dialogue. Door/ladder markers are intentionally hidden in this variant; their interactions must keep working.
+Run affected checks and clearly separate compilation/simulated tests from real game/headset measurements. Include version, scene, headset/runtime, reproduction steps and desktop comparison. Remove private details from logs. Audit map/enemy/camera/world-marker/suppression/reflection lifecycle and costs before a new candidate; compilation alone does not establish graphics stability.
 
 ## License
 
-Project-owned code is GPL-3.0-only. Submit only work you have the right to contribute under that license, and retain third-party attribution and license notices. Do not upload game assets, proprietary assemblies, credentials or unrelated personal files. The mod remains free; financial support is optional.
+Project-owned code is GPL-3.0-only. Contribute only work you can provide under that license and retain third-party notices. Do not upload game assets, proprietary assemblies, credentials or unrelated personal files. The mod remains free; financial support is optional.
