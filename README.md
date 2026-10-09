@@ -35,3 +35,11 @@ Passage door/ladder artwork and labels are hidden on desktop and in VR; actual i
 ## License and contributions
 
 Project-owned code is GPL-3.0-only; see [LICENSE](LICENSE). Third-party code retains its own notices. This does not license SIGNALIS, game assets or proprietary assemblies. See [third-party notices](THIRD_PARTY_NOTICES.md) and [contributing](CONTRIBUTING.md). The mod remains free; optional support does not unlock exclusive features.
+
+## Assets Used
+
+- **Signalis Mega Pack** - [mod.io](https://mod.io/g/bonelab/m/signalis-mega-pack#description)
+- **HD Signalis Weapon Pack** - [mod.io](https://mod.io/g/bonelab/m/hd-signalis-weapon-pack#description)
+- **Signalis-ified M92 Beretta** - [Sketchfab](https://sketchfab.com/3d-models/signalis-ified-m92-beretta-52c5b4bc8021449885a47075150e17f2)
+- **Signalis Thermite Flare** - [Sketchfab](https://sketchfab.com/3d-models/signalis-thermite-flare-879c71c3dabd4b1f873e5f4706e70498)
+- **Signalis-ified MP5 Swordfish "The Xiphias"** - [Sketchfab](https://sketchfab.com/3d-models/signalis-ified-mp5-swordfish-the-xiphias-1b4c4426802d4dd9b823429e53b01756)
