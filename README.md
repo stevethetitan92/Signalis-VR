@@ -20,6 +20,8 @@ If asked for the game path: **Steam → SIGNALIS → Manage → Browse local fil
 
 An intact local bundle remains usable if the update service is unavailable. Downloads are cached under `%LOCALAPPDATA%/SignalisVR/Packages`. Keep the extracted folder as your launcher; when it switches to a downloaded package, the command window prints that location.
 
+[Troubleshooting and fixes](TROUBLESHOOTING.md) — launcher errors, downloads, VR connections, logs and save recovery.
+
 ## Automatic setup and diagnostics
 
 The package includes the mod, required companion mods, MelonLoader, BepInEx, both VR providers, instructions, licenses and source archives. Steam, SIGNALIS and the selected connection software must already be installed. First-time mod-loader assembly generation may download its own dependencies.
