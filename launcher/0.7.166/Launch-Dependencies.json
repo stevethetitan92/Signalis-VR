@@ -1,0 +1,29 @@
+[
+  {
+    "file": "Mods/FPv2_reworked.dll",
+    "sha256": "76FA7F0D5ECE8B28D2D77ED73539314AC1C54EE60321A5D71C96E430D71BE7F7"
+  },
+  {
+    "file": "Mods/CameraPerspectiveSolid.dll",
+    "sha256": "0D814E716A4C0930D84B98E099D09C3BBA64964E42ABC891E8A584096D9181EC"
+  },
+  {
+    "file": "UserLibs/SignalisVrTracking/openvr_api.dll",
+    "sha256": "54AD7FE4CDB4D88FA818DBF8EB3D1F8CA2AE3B34D2FF115F87191D7D88E0A009",
+    "runtime": "SteamVR"
+  },
+  {
+    "file": "UserLibs/SignalisVrTracking/SignalisVrRenderBridge.dll",
+    "sha256": "FFDD68F068729102C6032B81B8732BF7AED5F9B4399CE4BE71FB2A690BF96645"
+  },
+  {
+    "file": "UserLibs/SignalisVrTracking/VirtualDesktop/openvr_api.dll",
+    "runtime": "VirtualDesktop",
+    "sha256": "827AD85F3606A4DC4A8F5561A8CA69E4C6C1B5D2B9CD3315A461B9270B08242C"
+  },
+  {
+    "file": "Mods/SignalisVrTracking.dll",
+    "sha256": "92023BDD092647DAB58A274A221222E6571B31457A6B23A212CE6192F7F7598E"
+  }
+]
+

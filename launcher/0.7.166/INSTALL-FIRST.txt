@@ -1,0 +1,42 @@
+SIGNALIS VR 0.7.166 - START HERE
+
+FIRST TIME INSTALLING THE MOD
+1. Download the FULL ZIP. Right-click it and choose Extract All.
+2. In Steam, right-click SIGNALIS > Manage > Browse local files.
+3. Copy EVERYTHING from inside the extracted ZIP into that game folder.
+   The Mods folder and Launch SteamVR.cmd must be beside SIGNALIS.exe.
+4. Open Steam, connect your headset, then double-click ONE launcher:
+
+   Launch SteamVR.cmd
+   Use this with SteamVR. You do NOT need Virtual Desktop.
+
+   Launch VirtualDesktop.cmd
+   Use this with Virtual Desktop and its PC Streamer. You do NOT need SteamVR.
+
+Close SIGNALIS before copying mod files. Keep a backup of a working installation.
+The first start can take longer while the mod loader prepares the game.
+
+ALREADY HAVE THE MOD?
+Download the UPDATE ZIP instead. Close SIGNALIS, back up your existing
+Mods/SignalisVrTracking.dll, then copy the update contents into the game folder.
+Keep your saves and settings. Do not use the full ZIP to overwrite your existing
+BepInEx configuration when updating.
+
+IF THE LAUNCHER CANNOT FIND THE GAME
+It first searches your Steam libraries automatically.
+If needed, the command window asks you for the game path:
+  Steam > right-click SIGNALIS > Manage > Browse local files.
+  Right-click SIGNALIS.exe > Copy as path. Paste it into the window > Enter.
+If that path also fails, the launcher automatically checks game discovery,
+its own files, required mod files, the VR bridge and your selected connection.
+Read the results. A report is saved in the Logs folder beside the launcher.
+You can paste another path or leave it blank to cancel. Nothing is installed or
+repaired automatically by the diagnostic check.
+
+You can also double-click Diagnose Launcher.cmd to run the check yourself.
+If a problem remains, attach the diagnostic report and MelonLoader/Latest.log:
+https://github.com/stevethetitan92/Signalis-VR/issues/new
+
+The package passed offline checks. This exact update still needs headset testing.
+Advanced options, refresh-rate matching and rollback: LAUNCHER-HELP.txt.
+

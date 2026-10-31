@@ -1,0 +1,87 @@
+SIGNALIS VR 0.7.166 - separate Virtual Desktop and SteamVR launchers
+
+Choose ONE connection:
+- Launch SteamVR.cmd: requires SteamVR and your headset's SteamVR connection.
+  Virtual Desktop is NOT required. Use Steam Link, a cable, or another supported
+  SteamVR headset connection if you do not own Virtual Desktop.
+- Launch VirtualDesktop.cmd: requires Virtual Desktop on the headset and
+  Virtual Desktop Streamer on the PC. Uses VDXR through the bundled OpenComposite
+  runtime. SteamVR is NOT required. Connect your headset to Streamer first.
+
+Steam itself and the Steam game are required for either option. SteamVR is a
+separate application from Steam. Neither launcher purchases or installs software.
+
+NEW INSTALL
+Close SIGNALIS. Extract the CONTENTS of the full package into the folder
+containing SIGNALIS.exe. The Mods, UserLibs, MelonLoader and BepInEx folders,
+version.dll, and launcher files belong beside SIGNALIS.exe. Open Steam and
+connect your headset, then run the launcher for your connection.
+MelonLoader's first run may need time/network access to generate game assemblies.
+
+EXISTING MOD INSTALL
+Use the Launcher Update ZIP. With SIGNALIS closed, back up your existing
+Mods/SignalisVrTracking.dll. Extract the update's contents into the game folder.
+Keep your settings, saves, other mods and BepInEx configuration.
+Do not change or overwrite either runtime DLL with another provider's DLL.
+The launchers select separate, hash-checked copies for the child game process.
+No system-wide OpenXR/OpenVR registry settings are changed.
+
+GAME DISCOVERY
+Steam libraries on other drives and custom installation folders are supported.
+If discovery fails, the command window asks for the game's executable or folder.
+Steam > right-click SIGNALIS > Manage > Browse local files. Right-click
+SIGNALIS.exe > Copy as path. Paste it into the command window and press Enter.
+Quotes are accepted. Invalid paths prompt again. Blank input cancels.
+After a failed pasted path, automatic diagnostics check Steam manifests and
+reachable folders, script syntax/checksums, required files/hashes, native bridge
+and provider DLL loading/exports, and the selected connection software. If a
+unique verified game location is recovered, discovery continues with it.
+Otherwise, the report explains the observed failures and lets you try again.
+Diagnose Launcher.cmd runs these checks independently, even when the main
+launcher script or discovery helper is missing or damaged.
+Diagnostics do not initialize VR, launch the game or repair/install files.
+
+OPTIONAL PATHS / REFRESH RATE
+From a command window in the launcher folder:
+  "Launch SteamVR.cmd" -GamePath "D:\Games\SIGNALIS" -SteamVRPath "D:\SteamVR"
+  "Launch VirtualDesktop.cmd" -GamePath "D:\Games\SIGNALIS" -VirtualDesktopPath "C:\Program Files\Virtual Desktop Streamer" -RefreshRate 90
+Use the refresh rate actually selected in Virtual Desktop (72, 80, 90 or 120).
+OpenComposite reports a fixed 90 Hz rather than the actual device refresh.
+Without -RefreshRate, VD mode uses the conservative existing 72 Hz pacing
+fallback. This is not a measured refresh rate or a 72-fps cap. SteamVR obtains
+refresh from its runtime. Estimated OpenComposite GPU timings are excluded.
+
+Read-only check: append -ValidateOnly to either command. This checks paths,
+the selected provider's dependencies and hashes. It launches/installs nothing.
+Neither connection requires the other connection's runtime files to validate.
+
+IF SOMETHING FAILS
+Launcher output is saved under Logs beside the launcher. Also retain
+MelonLoader/Latest.log from the game folder. For VD mode, OpenComposite logs
+are normally under %LOCALAPPDATA%\OpenComposite\logs.
+Report your launcher name, mod version, headset, GPU, connection, full error and
+logs at https://github.com/stevethetitan92/Signalis-VR/issues/new .
+F10 retries VR startup, F7 recenters and F12 stops VR.
+
+STATUS
+This launcher/runtime candidate is based on 0.7.163. It does not contain the
+unfinished 0.7.164/0.7.165 performance work or paused Blender changes.
+Offline compilation, simulated/regression checks and native export checks do
+not establish headset rendering, controller feel, frame rate or runtime startup.
+This exact VD/SteamVR candidate still needs a headset test on each path.
+
+ROLLBACK
+The full package and update include Rollback/Mods/SignalisVrTracking.dll from
+0.7.163. Copy that file back to Mods with the game closed to restore the original
+SteamVR-only mod. It does not support the new independent VD launcher.
+Historical packages and installed files in the developer's workspace are retained.
+
+THIRD-PARTY RUNTIME
+OpenComposite 1.0.1539 (OpenXR branch), GPLv3, unmodified official x64 download.
+Commit: a27e7e6a64bdcd1eff6b7fba1ea2ea34bcf1273d
+SHA256: 827AD85F3606A4DC4A8F5561A8CA69E4C6C1B5D2B9CD3315A461B9270B08242C
+https://gitlab.com/znixian/OpenOVR
+Matching source/submodule archives and license texts are in Sources.
+OpenComposite translates this mod's OpenVR calls to OpenXR/VDXR; this is not a
+claim that the complete SIGNALIS renderer has been rewritten as native OpenXR.
+
