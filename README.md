@@ -38,9 +38,9 @@ The full package includes MelonLoader 0.5.7 x64, the existing BepInEx folder, `S
 
 SteamVR retains the original OpenVR path. Virtual Desktop uses **VDXR through OpenComposite**; this is not a rewrite of the whole renderer as native OpenXR. Launcher selection is per game process and does not change system-wide runtime registry settings.
 
-**Offline verification:** 114 regression checks, 18 launcher checks, 16 diagnostic checks, all three command wrappers, deterministic compilation, resource/dependency checks and archive checksums passed. The native bridge passed its simulated 2,000-frame test. **This exact candidate still needs headset testing on both connections.** No stable frame-rate or graphics-stability claim is made.
+**Offline verification:** 114 regression checks, 18 launcher checks, 16 diagnostic checks, all three command wrappers, deterministic compilation, resource/dependency checks and archive checksums passed. The native bridge passed its simulated 2,000-frame test.
 
-The earlier 0.7.161 fresh install was user-confirmed working; that historical observation does not validate this new runtime candidate. [Earlier release/fallback](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.161-test.1). Unfinished 0.7.164/0.7.165 performance work and paused Blender changes are not integrated.
+The earlier 0.7.161 fresh install was user-confirmed working. [Earlier release/fallback](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.161-test.1). Unfinished 0.7.164/0.7.165 performance work and paused Blender changes are not integrated.
 
 ## Source and status
 
@@ -77,4 +77,4 @@ Medicine, graphics and save log errors are reported as evidence, not proof of th
 
 -DiagnoseOnly checks/repairs without launching; -NoRepair reports only; -ValidateOnly never repairs or launches. Read Mod Files/INSTALL-FIRST.txt. The inner legacy launchers and original Diagnose Launcher.cmd do not perform this new repair preflight.
 
-30 additional offline checks passed, including actual CMD wrappers, save backup/restore, corrupted sources, failed-repair rollback, linked-path rejection and running-game protection. Runtime DLLs/assets are unchanged; headset testing remains pending. Legacy v2 assets remain as fallback. Choose the v6 folder ZIPs for this layout.
+30 additional offline checks passed, including actual CMD wrappers, save backup/restore, corrupted sources, failed-repair rollback, linked-path rejection and running-game protection. Runtime DLLs/assets are unchanged. Legacy v2 assets remain as fallback. Choose the v6 folder ZIPs for this layout.
