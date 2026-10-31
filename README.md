@@ -6,9 +6,9 @@ Experimental Windows PC VR mod for SIGNALIS. New tester candidate: **0.7.166 —
 
 [Open the latest launcher release](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.166-launchers.1).
 
-1. Download **SIGNALIS-VR-0.7.166-Launchers-Full-v2.zip** and choose **Extract All**.
+1. Download **SIGNALIS-VR-0.7.166-Folder-Full-v6.zip** and choose **Extract All**.
 2. In Steam, right-click **SIGNALIS → Manage → Browse local files**.
-3. Copy **everything inside the extracted ZIP** into that game folder. The `Mods` folder and launchers should be beside `SIGNALIS.exe`.
+3. Copy **everything inside `Mod Files`** into that game folder. Keep the two outer launchers beside `Mod Files`. The `Mods` folder and launchers should be beside `SIGNALIS.exe`.
 4. Open Steam, connect your headset, and double-click **one** launcher:
 
 | Your connection | Open this file | What you need |
@@ -18,7 +18,7 @@ Experimental Windows PC VR mod for SIGNALIS. New tester candidate: **0.7.166 —
 
 Close the game before copying files and keep a working backup. The first mod-loader start can take longer.
 
-**Already installed the mod?** Use **SIGNALIS-VR-0.7.166-Launcher-Update-v2.zip** instead. Back up `Mods/SignalisVrTracking.dll`, then copy the update contents into the game folder. Your saves and settings stay in place. Do not overwrite your existing BepInEx configuration with the full package when updating.
+**Already installed the mod?** Use **SIGNALIS-VR-0.7.166-Folder-Update-v6.zip** instead. Back up `Mods/SignalisVrTracking.dll`, then copy the contents of the update Mod Files folder into the game folder. Your saves and settings stay in place. Do not overwrite your existing BepInEx configuration with the full package when updating.
 
 GitHub's automatic **Source code** ZIP/TAR downloads are not the install package.
 
@@ -30,7 +30,7 @@ The launcher searches your Steam libraries automatically, including other drives
 
 If that path also fails, the launcher automatically checks discovery, its own files, required mod files, native VR bridge/provider DLLs and your selected connection software. It saves a report in **Logs** beside the launcher and tells you what it found. A uniquely verified game location can be recovered; otherwise you can paste another path or cancel.
 
-You can also run **Diagnose Launcher.cmd**. These checks do not install/repair files, initialize a VR session or launch the game.
+You can also run **Diagnose Launcher.cmd**. The original Diagnose Launcher.cmd does not install/repair files or initialize VR. The outer launchers add the repair preflight described below.
 
 ## Included and verified
 
@@ -66,3 +66,15 @@ Project-owned code is GPL-3.0-only; see [LICENSE](LICENSE). Third-party code ret
 - **Signalis Thermite Flare** - [Sketchfab](https://sketchfab.com/3d-models/signalis-thermite-flare-879c71c3dabd4b1f873e5f4706e70498)
 - **Signalis-ified MP5 Swordfish "The Xiphias"** - [Sketchfab](https://sketchfab.com/3d-models/signalis-ified-mp5-swordfish-the-xiphias-1b4c4426802d4dd9b823429e53b01756)
 
+
+## Folder layout and health/repair update (v6)
+
+The v6 ZIP opens to exactly **Launch SteamVR.cmd**, **Launch VirtualDesktop.cmd**, and **Mod Files**. Copy the CONTENTS of Mod Files beside SIGNALIS.exe once; do not place the Mod Files folder itself inside the game. Keep the extracted bundle to use the outer launchers and repair copies. First-time installation remains manual.
+
+The outer launchers check installed packaged DLLs, launcher files, native bridge loading and the selected VR software. Missing/mismatched installed DLLs can be restored from verified bundled copies, after checksum-verified save and original-file backups. Failed multi-file repairs attempt rollback. Errors and attempted fixes are printed and saved under Mod Files/Logs; backups are under Mod Files/Backups. Close the game first. Settings, saves, unknown mods and original game binaries are not automatically replaced.
+
+Medicine, graphics and save log errors are reported as evidence, not proof of the cause. Save error evidence triggers backup; no unknown save-format edits occur. A selected earlier backup can be restored explicitly with -RestoreSaveBackup and a RESTORE prompt, after backing up current saves. This may lose later progress; Steam Cloud may resync saves. Original-game corruption requires Steam Verify integrity.
+
+-DiagnoseOnly checks/repairs without launching; -NoRepair reports only; -ValidateOnly never repairs or launches. Read Mod Files/INSTALL-FIRST.txt. The inner legacy launchers and original Diagnose Launcher.cmd do not perform this new repair preflight.
+
+30 additional offline checks passed, including actual CMD wrappers, save backup/restore, corrupted sources, failed-repair rollback, linked-path rejection and running-game protection. Runtime DLLs/assets are unchanged; headset testing remains pending. Legacy v2 assets remain as fallback. Choose the v6 folder ZIPs for this layout.
