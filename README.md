@@ -1,36 +1,58 @@
-# Signalis VR
+# SIGNALIS VR
 
-Experimental Windows PC VR mod for SIGNALIS. Latest documented candidate: **0.7.161**, October 9, 2026. No stable release yet.
-
-The tester reports that the complete **fresh install worked**. Earlier user observations confirmed HE flaregun switching, hands/grips/models, the Nowhere minimap, and computer functionality. These reports do not establish universal graphics stability or smooth movement.
-
-See [current status and installation requirements](STATUS-2026-10-09.md), [remaining issues](CURRENT_ISSUES.md), and [roadmap](ROADMAP.md).
+Experimental Windows PC VR mod for SIGNALIS. New tester candidate: **0.7.166 — separate launchers and automatic diagnostics**. The two connections are independent; you only need the one you use.
 
 ## Download and install
 
-[Download the full 0.7.161 fresh-install prerelease](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.161-test.1). Choose **SignalisVR-0.7.161-FreshInstall-BepInEx.zip** under Assets; the automatic Source code downloads are not install packages. Close SIGNALIS, preserve a working backup, and extract the ZIP contents beside SIGNALIS.exe. Read the release notes and included INSTALL-FIRST.txt.
+[Open the latest launcher release](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.166-launchers.1).
 
-## Required setup
+1. Download **SIGNALIS-VR-0.7.166-Launchers-Full-v2.zip** and choose **Extract All**.
+2. In Steam, right-click **SIGNALIS → Manage → Browse local files**.
+3. Copy **everything inside the extracted ZIP** into that game folder. The `Mods` folder and launchers should be beside `SIGNALIS.exe`.
+4. Open Steam, connect your headset, and double-click **one** launcher:
 
-Use a legitimate Windows 64-bit SIGNALIS installation, SteamVR, and your headset connection software. The tested package uses **MelonLoader 0.5.7 x64** and requires all three mods:
+| Your connection | Open this file | What you need |
+| --- | --- | --- |
+| SteamVR | `Launch SteamVR.cmd` | SteamVR and your usual headset connection. **No Virtual Desktop required.** |
+| Virtual Desktop | `Launch VirtualDesktop.cmd` | Virtual Desktop on the headset and Streamer on the PC. **No SteamVR required.** |
 
-- `Mods/SignalisVrTracking.dll` (0.7.161)
-- `Mods/FPv2_reworked.dll`
-- `Mods/CameraPerspectiveSolid.dll`
+Close the game before copying files and keep a working backup. The first mod-loader start can take longer.
 
-Also required: the matching `openvr_api.dll` and `SignalisVrRenderBridge.dll` in `UserLibs/SignalisVrTracking/`. The tested fresh-install package includes the requested BepInEx folder; its separate plugin activation is not established by the startup report. Preserve a working fallback and close the game before manually replacing files. No automatic installation or stable updates.
+**Already installed the mod?** Use **SIGNALIS-VR-0.7.166-Launcher-Update-v2.zip** instead. Back up `Mods/SignalisVrTracking.dll`, then copy the update contents into the game folder. Your saves and settings stay in place. Do not overwrite your existing BepInEx configuration with the full package when updating.
 
-## Current source for review
+GitHub's automatic **Source code** ZIP/TAR downloads are not the install package.
 
-[SignalisVR-code-review-0.7.161.zip](SignalisVR-code-review-0.7.161.zip) contains current mod logic and native bridge source. It excludes embedded model/texture/audio/artwork payloads, game binaries, proprietary assemblies, personal settings, saves and raw runtime logs. **It is a code-review snapshot, not a complete build or install package.** Its omitted-file list and original source manifest describe the missing parts.
+## If the launcher cannot find the game
 
-Historical source archives, status files and the root `src` tree remain available. The root `src` tree is historical; use the versioned review snapshot for current logic. Do not assume older checkpoints have current behavior.
+The launcher searches your Steam libraries automatically, including other drives. If it needs help, its command window asks for the game path:
 
-## Variant behavior and validation
+**Steam → SIGNALIS → Manage → Browse local files → right-click SIGNALIS.exe → Copy as path.** Paste it into the command window and press Enter.
 
-Passage door/ladder artwork and labels are hidden on desktop and in VR; actual interactions and approved object markers remain. Preserve books, dialogue, puzzles, inventory, controls and native rendering behavior.
+If that path also fails, the launcher automatically checks discovery, its own files, required mod files, native VR bridge/provider DLLs and your selected connection software. It saves a report in **Logs** beside the launcher and tells you what it found. A uniquely verified game location can be recovered; otherwise you can paste another path or cancel.
 
-0.7.161 passed 110 automated regression checks and two matching deterministic builds. Automated checks do not establish headset appearance, reflections or performance. Computer disk-drive view/crosshair changes, movement stutter, enemy graphics and other open issues need real game/headset checks.
+You can also run **Diagnose Launcher.cmd**. These checks do not install/repair files, initialize a VR session or launch the game.
+
+## Included and verified
+
+The full package includes MelonLoader 0.5.7 x64, the existing BepInEx folder, `SignalisVrTracking.dll` 0.7.166, required `FPv2_reworked.dll` and `CameraPerspectiveSolid.dll`, the matching native bridge, both separately selected providers, instructions, licenses, source archives and a 0.7.163 rollback DLL.
+
+SteamVR retains the original OpenVR path. Virtual Desktop uses **VDXR through OpenComposite**; this is not a rewrite of the whole renderer as native OpenXR. Launcher selection is per game process and does not change system-wide runtime registry settings.
+
+**Offline verification:** 114 regression checks, 18 launcher checks, 16 diagnostic checks, all three command wrappers, deterministic compilation, resource/dependency checks and archive checksums passed. The native bridge passed its simulated 2,000-frame test. **This exact candidate still needs headset testing on both connections.** No stable frame-rate or graphics-stability claim is made.
+
+The earlier 0.7.161 fresh install was user-confirmed working; that historical observation does not validate this new runtime candidate. [Earlier release/fallback](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.161-test.1). Unfinished 0.7.164/0.7.165 performance work and paused Blender changes are not integrated.
+
+## Source and status
+
+[0.7.166 code-review snapshot](https://github.com/stevethetitan92/Signalis-VR/releases/download/v0.7.166-launchers.1/SIGNALIS-VR-code-review-0.7.166.zip) · [Launcher source](launcher/0.7.166) · [Detailed status](STATUS-2026-10-31.md) · [Existing issues](CURRENT_ISSUES.md)
+
+The review archive omits embedded assets/data, proprietary assemblies and binaries; it is not a standalone build/install package. Historical source archives and the root `src` tree remain preserved. Use the versioned review snapshot for current logic.
+
+Passage door/ladder artwork remains hidden while actual interactions, approved item markers, maps, enemies/burning, computers, controls and native reflection behavior are preserved.
+
+## Report a problem
+
+[Open a bug report](https://github.com/stevethetitan92/Signalis-VR/issues/new?template=bug_report.yml). Include your mod version, launcher name, headset, what happened, the diagnostic report from **Logs**, and `MelonLoader/Latest.log`. Review personal paths in logs before posting.
 
 ## License and contributions
 
@@ -43,3 +65,4 @@ Project-owned code is GPL-3.0-only; see [LICENSE](LICENSE). Third-party code ret
 - **Signalis-ified M92 Beretta** - [Sketchfab](https://sketchfab.com/3d-models/signalis-ified-m92-beretta-52c5b4bc8021449885a47075150e17f2)
 - **Signalis Thermite Flare** - [Sketchfab](https://sketchfab.com/3d-models/signalis-thermite-flare-879c71c3dabd4b1f873e5f4706e70498)
 - **Signalis-ified MP5 Swordfish "The Xiphias"** - [Sketchfab](https://sketchfab.com/3d-models/signalis-ified-mp5-swordfish-the-xiphias-1b4c4426802d4dd9b823429e53b01756)
+
