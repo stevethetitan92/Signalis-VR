@@ -2,11 +2,18 @@ param(
  [ValidateSet('SteamVR','VirtualDesktop')][string]$Runtime='SteamVR',
  [string]$GamePath,[string]$SteamVRPath,[string]$VirtualDesktopPath,
  [ValidateSet(0,72,80,90,120)][int]$RefreshRate=0,
- [switch]$ValidateOnly,[switch]$DiagnoseOnly,[switch]$NoRepair,
+ [switch]$ValidateOnly,[switch]$DiagnoseOnly,[switch]$NoRepair,[switch]$NoDownload,[switch]$SkipOnlineUpdate,
  [string]$RestoreSaveBackup
 )
 $ErrorActionPreference='Stop'
 try {
+ if(Get-Process -Name SIGNALIS -ErrorAction SilentlyContinue){throw 'Close SIGNALIS before launcher diagnostics/repair.'}
+ . (Join-Path $PSScriptRoot 'Bundle-Download.ps1')
+ if(!$ValidateOnly -and !$SkipOnlineUpdate){
+  $next=Resolve-BundleDownload -PayloadRoot $PSScriptRoot -NoDownload:$NoDownload
+  if($next){$forward=@{};foreach($key in $PSBoundParameters.Keys){$forward[$key]=$PSBoundParameters[$key]};$forward.SkipOnlineUpdate=$true;& $next @forward;exit $LASTEXITCODE}
+ }
+ if(!(Test-BundleSources $PSScriptRoot)){throw 'Mod Files integrity check failed. Download/re-extract the all-in-one package.'}
  . (Join-Path $PSScriptRoot 'Install-Discovery.ps1')
  . (Join-Path $PSScriptRoot 'Launcher-Diagnostics.ps1')
  . (Join-Path $PSScriptRoot 'Bundle-Health.ps1')

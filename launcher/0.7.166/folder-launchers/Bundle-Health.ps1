@@ -79,20 +79,21 @@ function Invoke-BundleHealth {
  $pending=@();$seen=@{}
  foreach($entry in $manifest){
   $relative=[string]$entry.file
-  if($relative -notmatch '^(version\.dll|Mods/[^/]+\.dll|UserLibs/SignalisVrTracking/.+\.dll|MelonLoader/.+\.dll)$'){throw "Non-repairable manifest entry: $relative"}
+  if($relative -notmatch '^(version\.dll|(Mods|Plugins|MelonLoader|BepInEx|UserLibs)/.+)$' -or $relative -match '(^|/)(Logs?|Backups?|save|Saves|UserData)(/|$)' -or $entry.mode -notin @($null,'replace','missingOnly')){throw "Non-repairable manifest entry: $relative"}
   if($seen.ContainsKey($relative.ToLowerInvariant())){throw 'Duplicate repair manifest entry.'};$seen[$relative.ToLowerInvariant()]=$true
   $source=Resolve-HealthPath $PayloadRoot $relative
   $target=Resolve-HealthPath $game $relative
   if(!(Test-Path -LiteralPath $source -PathType Leaf) -or (Get-FileHash -LiteralPath $source).Hash -ne $entry.sha256){HealthRecord 'FAIL' 'Download/package' "Missing or changed repair source: $relative. Re-extract a fresh download. This file will not be copied.";continue}
   $exists=Test-Path -LiteralPath $target -PathType Leaf
+  if($exists -and $entry.mode -eq 'missingOnly'){HealthRecord 'PRESERVED' 'Configuration' $relative;continue}
   if(!$exists -or (Get-FileHash -LiteralPath $target).Hash -ne $entry.sha256){
    HealthRecord 'FAIL' 'Mod files' "Missing or different from this build: $relative. A different checksum may also mean another mod version."
    if(![StringComparer]::OrdinalIgnoreCase.Equals($source,$target)){$pending+=[pscustomobject]@{file=$relative;source=$source;target=$target;sha256=$entry.sha256;existed=$exists;originalHash=if($exists){(Get-FileHash -LiteralPath $target).Hash}else{$null}}}
   }
  }
- $installed=(Test-Path -LiteralPath (Join-Path $game 'version.dll') -PathType Leaf) -or (Test-Path -LiteralPath (Join-Path $game 'Mods/SignalisVrTracking.dll') -PathType Leaf)
- if($Repair -and !$installed){HealthRecord 'WARN' 'Installation' 'No existing mod detected. Copy the contents of Mod Files into the game folder once. Automatic first-time installation is disabled.'}
- if($Repair -and $installed -and $pending.Count -gt 0){
+ $packageFaults=@($checks|Where-Object {$_.state -eq 'FAIL' -and $_.area -in @('Base game','Download/package')}).Count
+ if($Repair -and $packageFaults){HealthRecord 'WARN' 'Installation/update' 'Base-game or bundled-source errors prevent installation/update. Resolve the errors above first.'}
+ if($Repair -and !$packageFaults -and $pending.Count -gt 0){
   $null=New-Item -ItemType Directory -Force -Path $backup
   $saveRecord=Backup-HealthSaves -GameRoot $game -BackupRoot $backup
   if($saveRecord){HealthRecord 'BACKUP' 'Saves' "Copied and checksum-verified existing save files: $saveRecord. Backup integrity is not proof that the game can load them."}
@@ -135,13 +136,13 @@ function Invoke-BundleHealth {
   if($errorLines.Count){HealthRecord 'WARN' 'Runtime log' "$($errorLines.Count) recent error-like lines in $log. Review full stack traces; errors are not automatically attributed to a particular symptom."}
  }
  $saveErrors=@($checks|Where-Object {$_.area -eq 'Saves' -and $_.state -eq 'EVIDENCE'})
- if($Repair -and $installed -and $saveErrors.Count -gt 0 -and !(Test-Path -LiteralPath (Join-Path $backup 'Save-Backup.json'))){
+ if($Repair -and $saveErrors.Count -gt 0 -and !(Test-Path -LiteralPath (Join-Path $backup 'Save-Backup.json'))){
   $null=New-Item -ItemType Directory -Force -Path $backup
   $saveRecord=Backup-HealthSaves -GameRoot $game -BackupRoot $backup
   if($saveRecord){HealthRecord 'BACKUP' 'Save error evidence' "Saves preserved at $saveRecord; no save content rewritten."}
  }
  $blocking=@($checks|Where-Object {$_.state -eq 'FAIL' -and $_.area -in @('Base game','Download/package','Repair','Repair rollback')}).Count
- foreach($entry in $manifest){$target=Resolve-HealthPath $game $entry.file;if(!(Test-Path -LiteralPath $target -PathType Leaf) -or (Get-FileHash -LiteralPath $target).Hash -ne $entry.sha256){$blocking++}}
+ foreach($entry in $manifest){$target=Resolve-HealthPath $game $entry.file;$exists=Test-Path -LiteralPath $target -PathType Leaf;if(!$exists -or ($entry.mode -ne 'missingOnly' -and (Get-FileHash -LiteralPath $target).Hash -ne $entry.sha256)){$blocking++}}
  HealthRecord 'SUMMARY' 'File health' "$blocking unresolved blocking file issue(s). Earlier FAIL entries describe the original findings; FIXED entries record successful repairs."
  HealthRecord 'LIMIT' 'Medicine / graphics / saves' 'Offline checks cannot reproduce healing, headset visuals or save loading. No speculative health/settings/save edits. Use the in-game diagnostic report plus Latest.log if symptoms remain. A prior backup can be restored explicitly; no invented save repair.'
  $logsRoot=Join-Path $PayloadRoot 'Logs';$null=New-Item -ItemType Directory -Force -Path $logsRoot
