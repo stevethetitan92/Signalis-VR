@@ -4,7 +4,7 @@
 
 ## Download and play
 
-[Download the all-in-one package](https://github.com/stevethetitan92/Signalis-VR/releases/download/v0.7.167-launchers.1/SIGNALIS-VR-0.7.167-All-In-One-v13.zip) — one download for new installations and updates.
+[Download the all-in-one package](https://github.com/stevethetitan92/Signalis-VR/releases/download/v0.7.167-launchers.1/SIGNALIS-VR-0.7.167-All-In-One-v14.zip) — one download for new installations and updates.
 
 1. Download the ZIP and choose **Extract All**.
 2. Keep **Launch SteamVR.cmd**, **Launch VirtualDesktop.cmd**, and **Mod Files** together.
@@ -18,7 +18,7 @@ Choose your preferred VR connection and let the launcher handle the setup. It au
 
 **No manual mod-file copying is needed.** The launcher searches Steam libraries, nearby installation folders and connected drives automatically. Multiple installations appear as numbered choices. If discovery and diagnostics cannot locate the game, paste the path to **SIGNALIS.exe** when prompted: **Steam → SIGNALIS → Manage → Browse local files → right-click SIGNALIS.exe → Copy as path**.
 
-Runtime checks validate configuration and components; they do not confirm a live headset or wireless connection. The SteamVR path uses SteamVR/OpenVR; the Virtual Desktop path uses VDXR. Steam, SIGNALIS and your selected connection software must already be installed. First-time mod-loader assembly generation may download dependencies.
+Before launch, the launcher queries the selected runtime for a live headset connection, attempts supported connection repairs, and reports specific recovery steps; wireless transport status is reported when the runtime exposes it. The SteamVR path uses SteamVR/OpenVR; the Virtual Desktop path uses VDXR. Steam, SIGNALIS and your selected connection software must already be installed. First-time mod-loader assembly generation may download dependencies.
 
 The package includes the mod, required companion mods, MelonLoader, BepInEx, both VR providers, embedded assets, instructions, licenses and source archives. Existing configuration is preserved; missing defaults are added. Saves and replaced files are backed up before changes, with rollback attempted if installation or repair fails. Unknown extra mods and original game data are not deleted.
 
