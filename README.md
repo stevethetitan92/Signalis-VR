@@ -1,16 +1,20 @@
 # SIGNALIS VR
 
-**0.7.167 — TESTER BUILD**
+**0.7.167 — Performance & Optimization Update**
 
 ## Download and play
 
-[Download the all-in-one package](https://github.com/stevethetitan92/Signalis-VR/releases/download/v0.7.167-launchers.1/SIGNALIS-VR-0.7.167-All-In-One-v14.zip) — one download for new installations and updates.
+[Download the all-in-one package](https://github.com/stevethetitan92/Signalis-VR/releases/download/v0.7.167-launchers.1/SIGNALIS-VR-0.7.167-All-In-One-v17.zip) — one download for new installations and updates.
 
 1. Download the ZIP and choose **Extract All**.
 2. Keep **Launch SteamVR.cmd**, **Launch VirtualDesktop.cmd**, and **Mod Files** together.
 3. Close SIGNALIS, open Steam and connect your headset. Open **one** launcher:
    - **Launch VirtualDesktop.cmd** — Virtual Desktop and its PC Streamer, using VDXR. SteamVR is not required.
    - **Launch SteamVR.cmd** — SteamVR. Virtual Desktop is not required.
+
+## Performance and optimization
+
+This update reduces repeated work in minimap projection, enemy material handling, firearm lookup, and reflection visibility. Run either launcher with `-CheckPerformance` to compare recorded CPU timings against a default 90 Hz target (11.11 ms per frame). Reports cover stereo rendering, the map, enemies, weapons, and reflections, and are saved under **Mod Files/Logs**.
 
 ## Automatic setup, updates and repairs
 
@@ -28,13 +32,13 @@ An intact local package remains usable if the update service is unavailable. Dow
 
 [Troubleshooting and fixes](TROUBLESHOOTING.md) — launcher errors, downloads, VR connections, logs and save recovery.
 
-Optional flags: `-DiagnoseOnly` checks/updates/repairs without starting the game; `-NoRepair` preserves installed files; `-NoDownload` skips online checks and uses the intact local package; `-ValidateOnly` performs offline checks without installation. Advanced options are in **Mod Files/INSTALL-FIRST.txt**.
+Optional flags: `-DiagnoseOnly` checks/updates/repairs without starting the game; `-NoRepair` preserves installed files; `-NoDownload` skips online checks and uses the intact local package; `-ValidateOnly` checks package files without installation. Advanced options are in **Mod Files/INSTALL-FIRST.txt**.
 
 ## Source and verification
 
 Current launcher and runtime source archives are bundled under **Mod Files/Sources**. Historical repository source remains preserved. GitHub’s automatic Source code ZIP/TAR links are for developers, not installation.
 
-Revision 13 passed 70 discovery scenarios in both supported PowerShell versions, 500 launcher scenarios, 35 setup/health/layout checks, updater recovery checks, and runtime regression suites. Native GPU checks covered rendering-state restoration and frame lifecycle. Automated checks are separate from live headset appearance and frame-rate measurements. See the [release notes](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.167-launchers.1) for changes and the package checksum.
+The package passed 500 launcher scenarios, including both packaged Windows launcher commands. The runtime passed 120 regression checks and 21 focused checks. See the [release notes](https://github.com/stevethetitan92/Signalis-VR/releases/tag/v0.7.167-launchers.1) for details and the package checksum.
 
 ## Report a problem
 
