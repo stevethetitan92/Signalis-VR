@@ -1,12 +1,14 @@
 # SIGNALIS VR
 
-**0.7.167 — Launcher Fix**
+**0.7.167 — Performance Update**
+
+Revision 19 shares one enemy renderer scan per refresh and reduces checksum reads on healthy installs from 560 to 377 in the launcher fixture.
 
 Revision 18 fixes the Virtual Desktop launcher’s `negotiate, code -6` error with newer VDXR/OpenXR versions. It also provides a specific recovery message for version-negotiation failures.
 
 ## Download and play
 
-[Download the all-in-one package](https://github.com/stevethetitan92/Signalis-VR/releases/download/v0.7.167-launchers.1/SIGNALIS-VR-0.7.167-All-In-One-v18.zip) — one download for new installations and updates.
+[Download the all-in-one package](https://github.com/stevethetitan92/Signalis-VR/releases/download/v0.7.167-launchers.1/SIGNALIS-VR-0.7.167-All-In-One-v19.zip) — one download for new installations and updates.
 
 1. Download the ZIP and choose **Extract All**.
 2. Keep **Launch SteamVR.cmd**, **Launch VirtualDesktop.cmd**, and **Mod Files** together.
